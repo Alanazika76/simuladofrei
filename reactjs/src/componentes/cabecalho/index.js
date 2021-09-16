@@ -1,4 +1,4 @@
-import Fotop from '../../assets/img/mdm.png';
+import Fotop from '../../assets/img/mdm.jpg';
 import Atualizar from '../../assets/img/atualizar.svg';
 import Sair from '../../assets/img/sair.svg';
 
@@ -13,7 +13,7 @@ export default function Menu() {
                 <div className="img-1"><img src={Fotop} alt="Foto de perfil" /></div>
                 <div class="absolute">3</div>
               </div>
-                <div className="texto-1">Olá, <b>Lionel Messi</b></div>
+                <div className="texto-1">Olá, <b>vin diesel com cabelo</b></div>
             </div>
             <div className="botoes">
                 <button><img src={Atualizar} alt="" /></button>
