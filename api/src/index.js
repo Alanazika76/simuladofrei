@@ -25,11 +25,11 @@ app.post('/matricula', async (req, resp) => {
         let consulta = await db.tb_matricula.findOne({where: {nm_turma: turma, nr_chamada: numero}});
         
         if(consulta != null) 
-            resp.send({erro: '😀 Aluno já cadastrado!'})
+            resp.send({erro: 'Aluno já cadastrado!'})
 
-            if(nome == "" || nome.length < 5 || numero == "" || numero <= 0 || curso == "" || curso.length < 5 || turma == "" || turma.length <= 3 )
+            if(nome == "" || nome.length < 10 || numero == "" || numero <= 0 || curso == "" || curso.length < 5 || turma == "" || turma.length <= 4 )
             {
-                resp.send({erro: '❌ Campos inválidos!'})
+                resp.send({erro: ' Campos inválidos!'})
             } else {
                 if(numero <= 0) {
                     resp.send({erro: 'O campo "Chamada" só pode conter números positivos!'})
@@ -54,8 +54,8 @@ app.put('/matricula/:id', async (req, resp) => {
         let { nome, numero, curso, turma } = req.body;
         let { id } = req.params;
 
-        if(nome == "" && nome.length < 2 || numero <= 0 || curso == "" && curso.length < 2 || turma == "" && nome.length <= 0 ) {
-            resp.send({erro: '❌ Campos inválidos!'})
+        if(nome == "" && nome.length < 0 || numero <= 0 || curso == "" && curso.length < 0 || turma == "" && turma.length <= 0 ) {
+            resp.send({erro: 'Campos invalidos!'})
         } else {
                 let i = await db.tb_matricula.update(
                 {

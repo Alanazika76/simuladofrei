@@ -48,7 +48,7 @@ export default function PagPrincipal() {
           toast.error(`${r.erro}`);
           return;
       } else {
-          toast.dark('💕 Produto cadastrado com sucesso!');
+          toast.dark(' Aluno cadastrado com sucesso!');
         }
     } else {
       let r = await api.Alterar(idalterado, nome, Numero, turma, curso);
@@ -57,7 +57,7 @@ export default function PagPrincipal() {
         toast.error(`${r.erro}`);
         return;
       } else {
-        toast.dark('✏️ Produto alterado!');
+        toast.dark('Aluno alterado!');
       }
     }
 
@@ -85,7 +85,7 @@ export default function PagPrincipal() {
             if (r.error)
               toast.error(`${r.error}`);
             else {
-              toast.dark('🗑️ Aluno removido!');
+              toast.dark('Aluno removido!');
               Listar();
             }
           }
