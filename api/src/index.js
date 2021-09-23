@@ -27,7 +27,7 @@ app.post('/matricula', async (req, resp) => {
         if(consulta != null) 
             resp.send({erro: 'Aluno já cadastrado!'})
 
-            if(nome == "" || nome.length < 10 || numero == "" || numero <= 0 || curso == "" || curso.length < 5 || turma == "" || turma.length <= 4 )
+            if(nome == ""  || numero == "" || numero <= 0 || curso == ""  || turma == ""  )
             {
                 resp.send({erro: ' Campos inválidos!'})
             } else {
@@ -55,7 +55,7 @@ app.put('/matricula/:id', async (req, resp) => {
         let { id } = req.params;
 
         if(nome == "" && nome.length < 0 || numero <= 0 || curso == "" && curso.length < 0 || turma == "" && turma.length <= 0 ) {
-            resp.send({erro: 'Campos invalidos!'})
+            resp.send({erro: 'campos invalidos'})
         } else {
                 let i = await db.tb_matricula.update(
                 {
